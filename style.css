@@ -1,0 +1,128 @@
+body {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+  }
+  
+  h1 {
+    position: absolute;
+    top: 0px;
+    left: 500px;
+    font-size: 25px;
+    font-family: "Kalam", cursive;
+  }
+  hr {
+    position: absolute;
+    top: 150px;
+  }
+  .inputform {
+    position: absolute;
+    top: 60px;
+    left: 130px;
+    font-size: 20px;
+  }
+  .form {
+    height: 20px;
+    width: 30px;
+  }
+  .dicetable {
+    border: thick solid black;
+    border-collapse: collapse;
+    width: 25%;
+    position: absolute;
+    top: 200px;
+    left: 131px;
+  }
+  .statstable {
+    border: thick solid black;
+    border-collapse: collapse;
+    width: 45%;
+    position: absolute;
+    top: 200px;
+    left: 577px;
+  }
+  .reset
+  {
+    text-color: rgb(111, 120, 109);
+    position: absolute;
+    top: 60px;
+    left: 1000px;
+    height: 50px;
+    width: 200px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+  .button {
+    text-color: rgb(111, 120, 109);
+    position: absolute;
+    top: 60px;
+    left: 800px;
+    height: 50px;
+    width: 200px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+  
+  .button:hover {
+    background-color: #FFF0F5;
+    box-shadow: none;
+  }
+  
+  .button:active {
+    box-shadow: -2px -2px -2px rgba(0, 0, 0, 0.1);
+    background-color: #FFB6C1;
+  }
+  
+  th,
+  td {
+    border: thin solid black;
+    padding: 8px;
+    width: 50%;
+  }
+  .line {
+    width: 100vw;
+    height: 1px;
+    border-bottom: 4px solid black;
+    position: absolute;
+    top: 150px;
+  }
+  
+  /* Define the hover highlight color for the table row */
+  .statstable tr:hover {
+    background-color: #4e95f4;
+  }
+  
+  /* Define the hover highlight color for the table row */
+  .dicetable tr:hover {
+    background-color: #4e95f4;
+  }
+  .dice {
+    width: 100px;
+    height: 100px;
+    position: static;
+    top: auto;
+    left: auto;
+  }
+  .rolldice {
+    width: 100px;
+    height: 100px;
+    position: static;
+    top: auto;
+    left: auto;
+    animation-name: rolldie;
+    animation-duration: 4s;
+  }
+  .rolldice {
+    -webkit-animation: rotation 0.5s linear;
+  }
+  @-webkit-keyframes rotation {
+    from {
+      -webkit-transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(359deg);
+    }
+  }
+  

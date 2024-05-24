@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Controls</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Kalam&display=swap"
+      rel="stylesheet"
+    />
+    <style></style>
+    <script src="script.js"></script>
+    <script>
+      function initialize() {
+        diceTable = document.getElementById("dicetable");
+        statsTable = document.getElementById("statstable");
+        inputContainer = document.getElementById("inputform");
+        numRolls = 0;
+
+        sortedresults = [];
+        results = [];
+        rolls = "";
+        dicenum = "";
+      }
+    </script>
+  </head>
+
+  <body onload="initialize();">
+    <div class="top">
+      <h1>Roll Dies and Get Results!</h1>
+      <form class="inputform" id="inputform">
+        How many dice would you like to roll?
+        <label>
+          <input type="radio" name="dicenum" value="1" />
+          One Dice
+        </label>
+        <label>
+          <input type="radio" name="dicenum" value="2" />
+          Two Dice
+        </label>
+        <label>
+          <input type="radio" name="dicenum" value="3" />
+          Three Dice
+        </label>
+
+        <br />
+
+        How many times will you like to roll the dice? (input numbers only)
+        <input name="rolls" type="text" class="form" />
+      </form>
+      <button class="button" id="button" onclick="getresults();">
+        Roll Dice
+        </button>
+        <button class="reset" id="reset" onclick="reset();">
+        Reset
+      </button>
+      <img
+        id="dice"
+        class="dice"
+        src="https://www.pensionsauthority.ie/images/lifecycle/icon_dice_lrg.png"
+      />
+      <hr />
+      <div class="line"></div>
+    </div>
+    <div class="bottom">
+      <table class="dicetable" id="dicetable">
+        <th colspan="4">Cumilative results</th>
+        <tr>
+          <th>Roll</th>
+          <th>Dice 1</th>
+          <th>Dice 2</th>
+          <th>Dice 3</th>
+        </tr>
+      </table>
+
+      <table class="statstable" id="statstable">
+        <th colspan="2">Statistics for roll</th>
+        <tr>
+          <th>Mean</th>
+          <td id="mean"></td>
+        </tr>
+
+        <tr>
+          <th>Median</th>
+          <td id="median"></td>
+        </tr>
+
+        <tr>
+          <th>Mode(s)</th>
+          <td id="mode"></td>
+        </tr>
+
+        <tr>
+          <th>Frequency of Doubles</th>
+          <td id="doubles"></td>
+        </tr>
+
+        <tr>
+          <th>Frequency of Triples</th>
+          <td id="triples"></td>
+        </tr>
+
+        <tr>
+          <td>Frequency of 1</td>
+          <td type="number" id="1"></td>
+        </tr>
+
+        <tr>
+          <td>Frequency of 2</td>
+          <td type="number" id="2"></td>
+        </tr>
+
+        <tr>
+          <td>Frequency of 3</td>
+          <td type="number" id="3"></td>
+        </tr>
+
+        <tr>
+          <td>Frequency of 4</td>
+          <td type="number" id="4"></td>
+        </tr>
+
+        <tr>
+          <td>Frequency of 5</td>
+          <td type="number" id="5"></td>
+        </tr>
+
+        <tr>
+          <td>Frequency of 6</td>
+          <td type="number" id="6"></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
