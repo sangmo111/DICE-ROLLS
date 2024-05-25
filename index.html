@@ -1,30 +1,30 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!-- Declaration of the document type -->
 <html>
   <head>
-    <title>Form Controls</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Form Controls</title> <!-- Title of the webpage -->
+    <link rel="stylesheet" href="style.css" /> <!-- Linking external stylesheet -->
     <link
       href="https://fonts.googleapis.com/css?family=Kalam&display=swap"
       rel="stylesheet"
-    />
-    <style></style>
-    <script src="script.js"></script>
+    /> <!-- Linking Google Fonts -->
+    <style></style> <!-- Internal CSS -->
+    <script src="script.js"></script> <!-- Linking external JavaScript file -->
     <script>
-      function initialize() {
-        diceTable = document.getElementById("dicetable");
-        statsTable = document.getElementById("statstable");
-        inputContainer = document.getElementById("inputform");
-        numRolls = 0;
+      function initialize() { <!-- JavaScript function for initialization -->
+        diceTable = document.getElementById("dicetable"); <!-- Getting reference to dice table -->
+        statsTable = document.getElementById("statstable"); <!-- Getting reference to stats table -->
+        inputContainer = document.getElementById("inputform"); <!-- Getting reference to input form -->
+        numRolls = 0; <!-- Initializing variable for number of rolls -->
 
-        sortedresults = [];
-        results = [];
-        rolls = "";
-        dicenum = "";
+        sortedresults = []; <!-- Array for sorted results -->
+        results = []; <!-- Array for results -->
+        rolls = ""; <!-- Variable to store rolls -->
+        dicenum = ""; <!-- Variable to store number of dice -->
       }
     </script>
   </head>
 
-  <body onload="initialize();">
+  <body onload="initialize();"> <!-- Initializing function on page load -->
     <div class="top">
       <div class="container">
         <div class="intro-box">
@@ -48,26 +48,26 @@
             </li>
           </ul>
         </div>
-        <hr class="line" />
-        <h1>Dice Roller</h1>
-        <h2>Explore Your Luck and Uncover Insights</h2>
+        <hr class="line" /> <!-- Horizontal rule -->
+        <h1>Dice Roller</h1> <!-- Heading -->
+        <h2>Explore Your Luck and Uncover Insights</h2> <!-- Subheading -->
         <form class="inputform" id="inputform">
           How many dice would you like to roll?
           <label>
-            <input type="radio" name="dicenum" value="1" />
+            <input type="radio" name="dicenum" value="1" /> <!-- Radio button for one die -->
             One Dice
           </label>
           <label>
-            <input type="radio" name="dicenum" value="2" />
+            <input type="radio" name="dicenum" value="2" /> <!-- Radio button for two dice -->
             Two Dice
           </label>
           <label>
-            <input type="radio" name="dicenum" value="3" />
+            <input type="radio" name="dicenum" value="3" /> <!-- Radio button for three dice -->
             Three Dice
           </label>
           <br />
           How many times will you like to roll the dice?
-          <input name="rolls" type="text" class="form" />
+          <input name="rolls" type="text" class="form" /> <!-- Text input for number of rolls -->
         </form>
 
         <img
@@ -75,71 +75,74 @@
           alt="Roll Dice"
           class="dice"
           id="dice"
-          onclick="rollDiceAndRun();"
+          onclick="rollDiceAndRun();" 
         />
 
-        <button class="reset" id="reset" onclick="reset();">Reset</button>
-        <hr />
-        <div class="line"></div>
+        <button class="reset" id="reset" onclick="reset();">Reset</button> <!-- Button to reset -->
+        <hr /> <!-- Horizontal rule -->
+        <div class="line"></div> <!-- Dividing line -->
       </div>
     </div>
 
+    <h1>Results</h1> <!-- Heading -->
+
+
     <div class="table-container">
-        <table class="dicetable" id="dicetable">
-          <th colspan="4">Cumulative results</th>
+        <table class="dicetable" id="dicetable"> <!-- Table for cumulative results -->
+          <th colspan="4">Cumulative results</th> <!-- Table heading -->
           <tr>
-            <th>Roll</th>
-            <th>Dice 1</th>
-            <th>Dice 2</th>
-            <th>Dice 3</th>
+            <th>Roll</th> <!-- Table header for roll number -->
+            <th>Dice 1</th> <!-- Table header for dice 1 -->
+            <th>Dice 2</th> <!-- Table header for dice 2 -->
+            <th>Dice 3</th> <!-- Table header for dice 3 -->
           </tr>
         </table>
 
-        <table class="statstable" id="statstable">
-          <th colspan="2">Statistics for roll</th>
+        <table class="statstable" id="statstable"> <!-- Table for statistics -->
+          <th colspan="2">Statistics for roll</th> <!-- Table heading -->
           <tr>
-            <th>Mean</th>
-            <td id="mean"></td>
+            <th>Mean</th> <!-- Table header for mean -->
+            <td id="mean"></td> <!-- Table data for mean -->
           </tr>
           <tr>
-            <th>Median</th>
-            <td id="median"></td>
+            <th>Median</th> <!-- Table header for median -->
+            <td id="median"></td> <!-- Table data for median -->
           </tr>
           <tr>
-            <th>Mode(s)</th>
-            <td id="mode"></td>
+            <th>Mode(s)</th> <!-- Table header for mode -->
+            <td id="mode"></td> <!-- Table data for mode -->
           </tr>
           <tr>
-            <th>Frequency of Doubles</th>
-            <td id="doubles"></td>
+            <th>Frequency of Doubles</th> <!-- Table header for doubles frequency -->
+            <td id="doubles"></td> <!-- Table data for doubles frequency -->
           </tr>
           <tr>
-            <th>Frequency of Triples</th>
-            <td id="triples"></td>
+            <th>Frequency of Triples</th> <!-- Table header for triples frequency -->
+            <td id="triples"></td> <!-- Table data for triples frequency -->
           </tr>
           <tr>
-            <td>Frequency of 1</td>
-            <td type="number" id="1"></td>
+            <td>Frequency of 1</td> <!-- Table data for frequency of 1 -->
+            <td type="number" id="1"></td> <!-- Table data for frequency of 1 -->
           </tr>
           <tr>
-            <td>Frequency of 2</td>
-            <td type="number" id="2"></td>
+            <td>Frequency of 2</td> <!-- Table data for frequency of 2 -->
+            <td type="number" id="2"></td> <!-- Table data for frequency of 2 -->
           </tr>
           <tr>
-            <td>Frequency of 3</td>
-            <td type="number" id="3"></td>
+            <td>Frequency of 3</td> <!-- Table data for frequency of 3 -->
+            <td type="number" id="3"></td> <!-- Table data for frequency of 3 -->
           </tr>
           <tr>
-            <td>Frequency of 4</td>
-            <td type="number" id="4"></td>
+            <td>Frequency of 4</td> <!-- Table data for frequency of 4 -->
+            <td type="number" id="4"></td> <!-- Table data for frequency of 4 -->
           </tr>
           <tr>
-            <td>Frequency of 5</td>
-            <td type="number" id="5"></td>
+            <td>Frequency of 5</td> <!-- Table data for frequency of 5 -->
+            <td type="number" id="5"></td> <!-- Table data for frequency of 5 -->
           </tr>
           <tr>
-            <td>Frequency of 6</td>
-            <td type="number" id="6"></td>
+            <td>Frequency of 6</td> <!-- Table data for frequency of 6 -->
+            <td type="number" id="6"></td> <!-- Table data for frequency of 6 -->
           </tr>
         </table>
     </div>
